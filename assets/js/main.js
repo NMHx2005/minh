@@ -146,7 +146,13 @@ if (document.querySelector('.login__form')) {
     }
     setCurrentUser(user);
     showMessage(form, 'Đăng nhập thành công! Chuyển về trang chủ...', 'success');
-    setTimeout(() => { window.location.href = 'index.html'; }, 1200);
+    setTimeout(() => {
+      if (user.email === 'admin@gmail.com') {
+        window.location.href = 'admin.html';
+      } else {
+        window.location.href = 'index.html';
+      }
+    }, 1200);
   });
 }
 
